@@ -19,29 +19,26 @@ void ConversorTempo(){
     double valor;
 
     do{
-
-        printf("\nDigite o valor e a unidade (h para horas, m para minutos, s para segundos):\n");
-        printf("Valor: ");
+        printf("\n--- CONVERSOR DE UNIDADE DE TEMPO ---");
+        printf("\n::: Digite o valor e a unidade (h para horas, m para minutos, s para segundos):\n");
+        printf(">> Valor: ");
         scanf("%lf%*c", &valor);
-        printf("Unidade: ");
+        printf(">> Unidade: ");
         scanf("%c%*c", &unidade);
         
         if (unidade == 'h' || unidade == 'H') {
-            printf("Horas: %.2lf\n", valor);
-            printf("Minutos: %.2lf\n", valor * 60);
-            printf("Segundos: %.2lf\n", valor * 3600);
+            printf("-- Minutos: %.2lf\n", valor * 60);
+            printf("-- Segundos: %.2lf\n", valor * 3600);
         } else if (unidade == 'm' || unidade == 'M') {
-            printf("Horas: %.2lf\n", valor / 60);
-            printf("Minutos: %.2lf\n", valor);
-            printf("Segundos: %.2lf\n", valor * 60);
+            printf("-- Horas: %.2lf\n", valor / 60);
+            printf("-- Segundos: %.2lf\n", valor * 60);
         } else if (unidade == 's' || unidade == 'S') {
-            printf("Horas: %.2lf\n", valor / 3600);
-            printf("Minutos: %.2lf\n", valor / 60);
-            printf("Segundos: %.2lf\n", valor);
+            printf("-- Horas: %.2lf\n", valor / 3600);
+            printf("-- Minutos: %.2lf\n", valor / 60);
         } else {
             printf("Unidade inválida! Use 'h' para horas, 'm' para minutos ou 's' para segundos.\n");
         }
-        printf("Deseja realizar uma nova conversão? (s/n): ");
+        printf(">> Deseja realizar uma nova conversão? (s/n): ");
         scanf("%c%*c", &opcao);
         printf("\n");
     }while(opcao == 's' || opcao == 'S');
