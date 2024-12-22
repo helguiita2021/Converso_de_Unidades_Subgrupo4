@@ -69,30 +69,30 @@ int main( ){
     scanf("%d",&opcao);
     
     switch(opcao){
-    	 case 1:
-    	 	break;
-    	 case 2:
+        case 1:
+            break;
+    	case 2:
 		    break;
-		 case 3:
+		case 3:
 		    break;
-	     case 4:
+	    case 4:
 		    break;
-		 case 5:
+		case 5:
 		    break;
-		 case 6:
-		     ConversorEnergia();
+		case 6:
+		    ConversorEnergia();
 			break;
-		 case 7:
+		case 7:
 		    break;
-	      case 8:
+	    case 8:
 		  	ConversorTempo();
 		    break;
-		  case 9:
+		case 9:
 		    break;
-		  case 10:
+		case 10:
 		    return 0;
-		  default:
-		     printf("Esta opcao não é valida.!\n"); 			   		 	 	 	       		    		
+		default:
+		    printf("Esta opcao não é valida.!\n"); 			   		 	 	 	       		    		
 
     }
 
