@@ -43,6 +43,22 @@ void ConversorTempo(){
         printf("\n");
     }while(opcao == 's' || opcao == 'S');
 }
+
+void converterVelocidade(){
+    double valor, kmh, ms, mph;
+
+    printf("\n--- Conversor de Velocidade ---\n");
+    printf("Digite a velocidade em km/h: ");
+    scanf("%lf", &valor);
+
+    kmh = valor;
+    ms = kmh / 3.6;
+    mph = kmh / 1.609;
+
+    printf("\nVelocidade:\n");
+    printf("%.2lf km/h = %.2lf m/s\n", kmh, ms);
+    printf("%.2lf km/h = %.2lf mph\n", kmh, mph);
+}
     
 
 int main( ){
@@ -58,7 +74,7 @@ int main( ){
     printf(" Digite 4 - Unidades de Temperatura\n");
     printf(" Digite 5 - Unidades de Velocidade\n");
     printf(" Digite 6 - Unidades de Energia\n");
-    printf(" Digite 7 - Unidades de Área\n");
+    printf(" Digite 7 - Unidades de Area\n");
     printf(" Digite 8 - Unidades de Tempo\n");
     printf(" Digite 9 - Unidades de Dados\n");
     printf(" Digite 10 - Caso deseje Sair do Sistema\n");
@@ -75,6 +91,7 @@ int main( ){
 	    case 4:
 		    break;
 		case 5:
+        converterVelocidade();
 		    break;
 		case 6:
 		    ConversorEnergia();
