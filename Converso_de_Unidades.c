@@ -117,6 +117,49 @@ void ConversorTemperatura() {
     }
 }
 
+// Função para converter unidades de dados
+void ConversorDados() {
+    int escolha;
+    double valor, resultado;
+
+    printf("\nEscolha a conversao de dados:\n");
+    printf("1. Bits para Bytes\n");
+    printf("2. Bytes para Kilobytes (KB)\n");
+    printf("3. Kilobytes (KB) para Megabytes (MB)\n");
+    printf("4. Megabytes (MB) para Gigabytes (GB)\n");
+    printf("5. Gigabytes (GB) para Terabytes (TB)\n");
+    printf("\nInforme a sua escolha: ");
+    scanf("%d", &escolha);
+
+    printf("Digite o valor a ser convertido: ");
+    scanf("%lf", &valor);
+
+    switch(escolha) {
+        case 1:
+            resultado = valor / 8.0;
+            printf("%.2f Bits = %.2f Bytes\n", valor, resultado);
+            break;
+        case 2:
+            resultado = valor / 1024.0;
+            printf("%.2f Bytes = %.2f Kilobytes (KB)\n", valor, resultado);
+            break;
+        case 3:
+            resultado = valor / 1024.0;
+            printf("%.2f Kilobytes (KB) = %.2f Megabytes (MB)\n", valor, resultado);
+            break;
+        case 4:
+            resultado = valor / 1024.0;
+            printf("%.2f Megabytes (MB) = %.2f Gigabytes (GB)\n", valor, resultado);
+            break;
+        case 5:
+            resultado = valor / 1024.0;
+            printf("%.2f Gigabytes (GB) = %.2f Terabytes (TB)\n", valor, resultado);
+            break;
+        default:
+            printf("Opção inválida!\n");
+    }
+}
+
 
 int main( ){
     int opcao;
@@ -160,6 +203,7 @@ int main( ){
 		  	ConversorTempo();
 		    break;
 		case 9:
+            ConversorDados();
 		    break;
 		case 10:
 		    return 0;
