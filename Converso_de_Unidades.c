@@ -160,6 +160,80 @@ void ConversorDados() {
     }
 }
 
+void converter() {//Função criada pélo Colaborador Afonso Souza
+    int opcao;
+    double valor;
+
+    do {
+        printf("\n=== Conversor de Unidades ===\n");
+        printf("1. Milímetros para Centímetros\n");
+        printf("2. Milímetros para Metros\n");
+        printf("3. Milímetros para Quilômetros\n");
+        printf("4. Centímetros para Milímetros\n");
+        printf("5. Centímetros para Metros\n");
+        printf("6. Centímetros para Quilômetros\n");
+        printf("7. Metros para Milímetros\n");
+        printf("8. Metros para Centímetros\n");
+        printf("9. Metros para Quilômetros\n");
+        printf("10. Quilômetros para Milímetros\n");
+        printf("11. Quilômetros para Centímetros\n");
+        printf("12. Quilômetros para Metros\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 0) {
+            printf("Saindo...\n");
+            break;
+        }
+
+        printf("Digite o valor a ser convertido: ");
+        scanf("%lf", &valor);
+
+        switch (opcao) {
+            case 1:
+                printf("%.2f mm = %.2f cm\n", valor, valor / 10);
+                break;
+            case 2:
+                printf("%.2f mm = %.2f m\n", valor, valor / 1000);
+                break;
+            case 3:
+                printf("%.2f mm = %.2f km\n", valor, valor / 1000000);
+                break;
+            case 4:
+                printf("%.2f cm = %.2f mm\n", valor, valor * 10);
+                break;
+            case 5:
+                printf("%.2f cm = %.2f m\n", valor, valor / 100);
+                break;
+            case 6:
+                printf("%.2f cm = %.2f km\n", valor, valor / 100000);
+                break;
+            case 7:
+                printf("%.2f m = %.2f mm\n", valor, valor * 1000);
+                break;
+            case 8:
+                printf("%.2f m = %.2f cm\n", valor, valor * 100);
+                break;
+            case 9:
+                printf("%.2f m = %.2f km\n", valor, valor / 1000);
+                break;
+            case 10:
+                printf("%.2f km = %.2f mm\n", valor, valor * 1000000);
+                break;
+            case 11:
+                printf("%.2f km = %.2f cm\n", valor, valor * 100000);
+                break;
+            case 12:
+                printf("%.2f km = %.2f m\n", valor, valor * 1000);
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 0);
+}
+
+
 
 int main( ){
     int opcao;
@@ -198,6 +272,7 @@ int main( ){
 		    ConversorEnergia();
 			break;
 		case 7:
+            converter();
 		    break;
 	    case 8:
 		  	ConversorTempo();
