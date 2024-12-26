@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include<locale.h>
 
 //Estrutura do MENU do Código
 
@@ -117,9 +118,11 @@ void ConversorTemperatura() {
     }
 }
 
-void ConversorDados(){
+// Função para converter unidades de dados
+void ConversorDados() {
     int escolha;
     double valor, resultado;
+
     printf("\nEscolha a conversao de dados:\n");
     printf("1. Bits para Bytes\n");
     printf("2. Bytes para Kilobytes (KB)\n");
@@ -128,8 +131,10 @@ void ConversorDados(){
     printf("5. Gigabytes (GB) para Terabytes (TB)\n");
     printf("\nInforme a sua escolha: ");
     scanf("%d", &escolha);
+
     printf("Digite o valor a ser convertido: ");
     scanf("%lf", &valor);
+
     switch(escolha) {
         case 1:
             resultado = valor / 8.0;
@@ -154,6 +159,170 @@ void ConversorDados(){
         default:
             printf("Opção inválida!\n");
     }
+}
+
+void converter() {//Função criada pélo Colaborador Afonso Souza
+    int opcao;
+    double valor;
+
+    do {
+        printf("\n=== Conversor de Unidades ===\n");
+        printf("1. Milímetros para Centímetros\n");
+        printf("2. Milímetros para Metros\n");
+        printf("3. Milímetros para Quilômetros\n");
+        printf("4. Centímetros para Milímetros\n");
+        printf("5. Centímetros para Metros\n");
+        printf("6. Centímetros para Quilômetros\n");
+        printf("7. Metros para Milímetros\n");
+        printf("8. Metros para Centímetros\n");
+        printf("9. Metros para Quilômetros\n");
+        printf("10. Quilômetros para Milímetros\n");
+        printf("11. Quilômetros para Centímetros\n");
+        printf("12. Quilômetros para Metros\n");
+        printf("0. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        if (opcao == 0) {
+            printf("Saindo...\n");
+            break;
+        }
+
+        printf("Digite o valor a ser convertido: ");
+        scanf("%lf", &valor);
+
+        switch (opcao) {
+            case 1:
+                printf("%.2f mm = %.2f cm\n", valor, valor / 10);
+                break;
+            case 2:
+                printf("%.2f mm = %.2f m\n", valor, valor / 1000);
+                break;
+            case 3:
+                printf("%.2f mm = %.2f km\n", valor, valor / 1000000);
+                break;
+            case 4:
+                printf("%.2f cm = %.2f mm\n", valor, valor * 10);
+                break;
+            case 5:
+                printf("%.2f cm = %.2f m\n", valor, valor / 100);
+                break;
+            case 6:
+                printf("%.2f cm = %.2f km\n", valor, valor / 100000);
+                break;
+            case 7:
+                printf("%.2f m = %.2f mm\n", valor, valor * 1000);
+                break;
+            case 8:
+                printf("%.2f m = %.2f cm\n", valor, valor * 100);
+                break;
+            case 9:
+                printf("%.2f m = %.2f km\n", valor, valor / 1000);
+                break;
+            case 10:
+                printf("%.2f km = %.2f mm\n", valor, valor * 1000000);
+                break;
+            case 11:
+                printf("%.2f km = %.2f cm\n", valor, valor * 100000);
+                break;
+            case 12:
+                printf("%.2f km = %.2f m\n", valor, valor * 1000);
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (opcao != 0);
+}
+
+
+void conversorUnico() {
+    setlocale(LC_ALL, "Portuguese_Brazil");
+    int origem, destino;
+    float valor, resultado;
+
+    printf("Bem-vindo ao Conversor de Unidades de Volume!\n");
+
+    while (1) {
+        printf("\nConversor de Unidades de Volume\n");
+        printf("Escolha a unidade de origem:\n\n");
+        printf("1. Litros\n");
+        printf("2. Mililitros\n");
+        printf("3. Metros Cúbicos\n");
+        printf("4. Galões (americanos)\n\n");
+        printf("Digite a opção: ");
+        scanf("%d", &origem);
+
+        if (origem < 1 || origem > 4) {
+            printf("Opção inválida! Tente novamente.\n");
+            continue;
+        }
+
+        printf("Digite o valor a ser convertido: ");
+        scanf("%f", &valor);
+
+        printf("\nEscolha a unidade de destino:\n\n");
+        printf("1. Litros\n");
+        printf("2. Mililitros\n");
+        printf("3. Metros Cúbicos\n");
+        printf("4. Galões (americanos)\n\n");
+        printf("Digite a opção: ");
+        scanf("%d", &destino);
+
+        if (destino < 1 || destino > 4) {
+            printf("Opção inválida! Tente novamente.\n");
+            continue;
+        }
+
+        
+        resultado = valor;
+        switch (origem) {
+            case 1: // Litros
+                resultado = valor;
+                break;
+            case 2: // Mililitros
+                resultado = valor / 1000;
+                break;
+            case 3: // Metros cúbicos
+                resultado = valor * 1000;
+                break;
+            case 4: // Galões (americanos)
+                resultado = valor * 3.78541;
+                break;
+            default:
+                printf("Opção de origem inválida!\n");
+                continue;
+        }
+
+      
+        switch (destino) {
+            case 1: // Litros
+                break;
+            case 2: // Mililitros
+                resultado *= 1000;
+                break;
+            case 3: // Metros cúbicos
+                resultado /= 1000;
+                break;
+            case 4: // Galões (americanos)
+                resultado /= 3.78541;
+                break;
+            default:
+                printf("Opção de destino inválida!\n");
+                continue;
+        }
+
+        printf("Resultado: %.4f\n", resultado);
+
+        char continuar;
+        printf("\nDeseja fazer outra conversão? (s/n): ");
+        scanf(" %c", &continuar);
+
+        if (continuar == 'n' || continuar == 'N') {
+            break;
+        }
+    }
+
+    printf("Obrigado por usar o conversor!\n");
 }
 
 void ConversorComprimento()
@@ -193,6 +362,8 @@ void ConversorComprimento()
     }
 
 
+
+
 int main( ){
     int opcao;
 
@@ -220,6 +391,7 @@ int main( ){
     	case 2:
 		    break;
 		case 3:
+            conversorUnico(); 
 		    break;
 	    case 4:
             ConversorTemperatura();
@@ -231,12 +403,13 @@ int main( ){
 		    ConversorEnergia();
 			break;
 		case 7:
+            converter();
 		    break;
 	    case 8:
 		  	ConversorTempo();
 		    break;
 		case 9:
-			ConversorDados();
+            ConversorDados();
 		    break;
 		case 10:
 		    return 0;
@@ -249,3 +422,4 @@ int main( ){
        
 
 }
+
