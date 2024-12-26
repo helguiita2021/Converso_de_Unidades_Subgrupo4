@@ -31,12 +31,21 @@ Instrução sobre o Programa de Conversão de Unidade.
 
 O programar de Conversão de Unidade, foi elaborado pelo subgrupo 4, que contém os seguintes componentes e suas respectivas Funções:
 
+
 Helga - Criação do Menu e Conversão da Unidade de Energia.
+
 Juliano - Função de Conversão de Dados
+
 Vitor - Função de Conversão de Temperatura
+
 Afonso - Função de Conversão de Área
+
 Marcos - Função de Conversão de Volume
+
 Luís - Função de Conversão de Massa
+
 Rian - Função de Velocidade
+
 Cauã - Função de Comprimento
+
 Laisa - Função de Tempo
